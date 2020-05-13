@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>INDEX 5</title>
+  </head>
+  <body>
+    <h1>List of employees</h1>
+    {% if access_records %}
+    <table>
+      <thead>
+        <th>EMP ID</th>
+        <th>EMP NAME</th>
+        <th>EMP MAILID</th>
+        <th>DEPT ID</th>
+      </thead>
+      {% for acc in access_records %}
+      <tr>
+        <td>{{ acc.empid }}</td>
+        <td>{{ acc.empname }}</td>
+        <td>{{ acc.empmail }}</td>
+        <td>{{ acc.depid }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    {% else %}
+    <p>No records found</p>
+    {% endif %}
+
+  </body>
+</html>

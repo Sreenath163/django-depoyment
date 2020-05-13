@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{% extends 'third_app/base.html' %}
+{% load my_filter %}
+{% block title %}
+{{ title }}
+{% endblock %}
+
+
+
+{% block body_block %}
+<h1>Welcome to DBA</h1>
+
+{{ text|upper }}
+{{ number|add:"99" }}
+{{ extra_text|cuts:"hello"}}
+{% endblock %}

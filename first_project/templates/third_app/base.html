@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>
+      {% block title %}
+      {{ title|default:"Operations"}}
+      {% endblock %}
+    </title>
+  </head>
+  <body>
+
+    <nav>
+      <div class="container">
+        <ul>
+          <li><a href="{% url 'third_app:scm' %}">SCM</a></li>
+          <li><a href="{% url 'third_app:dba' %}">DBA</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <h1>Welcome to third app home page</h1>
+    {% block body_block %}
+    <h1>This will not inherit even if you extend</h1>
+    {% endblock %}
+
+  </body>
+</html>
